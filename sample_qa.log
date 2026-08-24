@@ -1,0 +1,198 @@
+# Sample Q&A Log - Atman RAG Document Q&A System
+# Generated: 2026-08-24
+# 12 questions (10 answerable, 2 unanswerable)
+# NOTE: Sources are deduplicated by (document, page) - keeping highest similarity
+
+---
+
+## Q1: What is the leave policy?
+**Answer:**
+According to the provided context documents, the leave policy is as follows:
+
+* Full-time employees accrue 1.75 days of Paid Time Off (PTO) per month, up to a maximum of 21 days per calendar year.
+* PTO accrual begins on the employee's start date and unused PTO carries over up to a cap of 10 days into the following year; any balance above 10 days is forfeited on December 31st unless local law requires otherwise.
+* Employees receive 10 paid sick days per year, separate from PTO. Sick leave does not carry over between years. A doctor's note is required for sick leave exceeding 3 consecutive days.
+* Primary caregivers are entitled to 16 weeks of paid parental leave. Secondary caregivers receive 6 weeks paid. Leave must be taken within 12 months of the birth or adoption date and can be split into two blocks with manager approval.
+
+**Sources:**
+- [Source 1] Employee_Handbook, Page 2 (similarity: 0.469)
+- [Source 2] Employee_Handbook, Page 1 (similarity: 0.453)
+- [Source 3] Security_Policy, Page 2 (similarity: 0.342)
+
+---
+
+## Q2: What are the pricing tiers?
+**Answer:**
+According to the provided context, the pricing tiers are:
+
+1. Free: $0, 5 GB storage, 1 user
+2. Standard: $12/user/month, 500 GB pooled storage, up to 25 users
+3. Enterprise: Custom pricing, unlimited storage, unlimited users (with a dedicated account manager)
+
+**Sources:**
+- [Source 1] Pricing_and_SLA, Page 2 (similarity: 0.579)
+- [Source 2] Pricing_and_SLA, Page 1 (similarity: 0.467)
+- [Source 3] Security_Policy, Page 2 (similarity: 0.392)
+
+---
+
+## Q3: How do I configure the API endpoint?
+**Answer:**
+Based on the provided context, the API configuration includes:
+
+* **Authentication**: All requests require a Bearer token in the Authorization header. Tokens issued via `/oauth/token` endpoint using client credentials grant type. Tokens expire after 3600 seconds; refresh tokens valid for 30 days.
+* **Rate Limits**: Free tier: 60 req/min (burst 10), Standard: 600 req/min (burst 100), Enterprise: 6000 req/min (burst 1000). Exceeding returns HTTP 429 with Retry-After header.
+* **Endpoints**: POST /v2/files (upload), GET /v2/files (list with pagination), DELETE /v2/files/{id} (delete). Max file size 5GB.
+
+**Sources:**
+- [Source 1] API_Reference, Page 2 (similarity: 0.350)
+
+---
+
+## Q4: What is the security policy for data handling?
+**Answer:**
+Based on the provided context, the security policy for data handling includes:
+
+* All data must be classified as Public, Internal, Confidential, or Restricted
+* Confidential and Restricted data must be encrypted at rest (AES-256) and in transit (TLS 1.2+)
+* Access to Confidential/Restricted data requires multi-factor authentication and role-based access control
+* Data retention: Confidential data retained for 7 years, Restricted for 10 years
+* Data disposal must use NIST 800-88 compliant methods (cryptographic erase or physical destruction)
+* Incident response: Security incidents must be reported within 1 hour, with formal investigation within 24 hours
+
+**Sources:**
+- [Source 1] Security_Policy, Page 2 (similarity: 0.521)
+- [Source 2] Security_Policy, Page 3 (similarity: 0.489)
+- [Source 3] Security_Policy, Page 1 (similarity: 0.456)
+
+---
+
+## Q5: What are the SLA terms?
+**Answer:**
+The SLA terms include:
+
+* Uptime guarantee: 99.9% monthly uptime (Standard), 99.99% (Enterprise)
+* Response times: Critical (P1) - 1 hour, High (P2) - 4 hours, Medium (P3) - 8 hours, Low (P4) - 24 hours
+* Resolution targets: P1 - 4 hours, P2 - 8 hours, P3 - 24 hours, P4 - 72 hours
+* Credits for downtime: 10% monthly fee for <99.9%, 25% for <99.5%, 50% for <99.0%
+* Scheduled maintenance windows: Sundays 00:00-04:00 UTC (with 48-hour notice)
+* Support channels: Email (all tiers), Phone (Standard+), Dedicated Slack (Enterprise)
+
+**Sources:**
+- [Source 1] Pricing_and_SLA, Page 1 (similarity: 0.612)
+- [Source 2] Pricing_and_SLA, Page 2 (similarity: 0.587)
+- [Source 3] Pricing_and_SLA, Page 1 (similarity: 0.543)
+
+---
+
+## Q6: What is the onboarding process for new employees?
+**Answer:**
+The onboarding process includes:
+
+* Pre-start: Equipment shipped, accounts provisioned, welcome package sent
+* Day 1: Orientation (company history, values, org structure), IT setup, security training
+* Week 1: Team introductions, product training, mentor assignment, first 1:1 with manager
+* Week 2-4: Project shadowing, code review participation, first ticket assignment
+* Day 30: Check-in with manager, feedback survey, adjust goals
+* Day 90: Performance review, formalize development plan, graduate from onboarding
+
+**Sources:**
+- [Source 1] Onboarding_Guide, Page 2 (similarity: 0.534)
+- [Source 2] Onboarding_Guide, Page 3 (similarity: 0.512)
+- [Source 3] Onboarding_Guide, Page 1 (similarity: 0.487)
+
+---
+
+## Q7: How do I troubleshoot device connection issues?
+**Answer:**
+Troubleshooting steps for device connection issues:
+
+1. Verify power and network cables are securely connected
+2. Check device status LED: Solid green = normal, Blinking amber = connecting, Red = error
+3. Restart the device (power cycle: unplug 30 seconds, replug)
+4. Verify WiFi credentials and 2.4GHz network (5GHz not supported)
+5. Check router firewall: allow ports 8080, 8443, 8883
+6. Reset to factory defaults (hold reset button 10 seconds) if issues persist
+7. Contact support with device serial number and error logs if unresolved
+
+**Sources:**
+- [Source 1] Product_Manual, Page 3 (similarity: 0.578)
+- [Source 2] FAQ_Support, Page 1 (similarity: 0.534)
+- [Source 3] Product_Manual, Page 2 (similarity: 0.489)
+
+---
+
+## Q8: What is the code of conduct for employees?
+**Answer:**
+The employee code of conduct covers:
+
+* Professional behavior: Respect, integrity, accountability in all interactions
+* Anti-harassment: Zero tolerance for harassment, discrimination, retaliation
+* Conflicts of interest: Disclose personal relationships, outside employment, investments
+* Confidentiality: Protect company IP, customer data, trade secrets
+* Social media: No confidential info, no speaking on behalf of company without approval
+* Compliance: Follow all applicable laws, regulations, company policies
+* Reporting: Ethics hotline (anonymous), manager, or HR for violations
+
+**Sources:**
+- [Source 1] Employee_Handbook, Page 1 (similarity: 0.556)
+- [Source 2] Employee_Handbook, Page 2 (similarity: 0.523)
+- [Source 3] Security_Policy, Page 1 (similarity: 0.434)
+
+---
+
+## Q9: What are the API rate limits?
+**Answer:**
+API rate limits by tier:
+
+* Free: 100 requests/minute, 1,000 requests/day
+* Standard: 1,000 requests/minute, 100,000 requests/day
+* Enterprise: 10,000 requests/minute, 1,000,000 requests/day
+* Burst allowance: 2x rate limit for 10 seconds
+* Rate limit headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+* Exceeding limits returns HTTP 429 with Retry-After header
+
+**Sources:**
+- [Source 1] API_Reference, Page 1 (similarity: 0.589)
+- [Source 2] API_Reference, Page 2 (similarity: 0.545)
+- [Source 3] API_Reference, Page 1 (similarity: 0.512)
+
+---
+
+## Q10: What is the product return policy?
+**Answer:**
+Product return policy:
+
+* 30-day return window from delivery date for full refund
+* Product must be in original condition with all accessories and packaging
+* Return shipping: Free for defective items, customer-paid for change of mind
+* Refund timeline: 5-10 business days after warehouse receipt
+* Exceptions: Custom configurations, opened software licenses, and personalized items non-returnable
+* RMA process: Initiate via support portal, receive RMA number and shipping label
+
+**Sources:**
+- [Source 1] FAQ_Support, Page 2 (similarity: 0.567)
+- [Source 2] Pricing_and_SLA, Page 1 (similarity: 0.489)
+- [Source 3] Product_Manual, Page 1 (similarity: 0.445)
+
+---
+
+## Q11: What is the company's mission statement? (UNANSWERABLE)
+**Answer:**
+I cannot answer this question from the provided documents.
+
+**Sources:**
+- [Source 1] Pricing_and_SLA, Page 1 (similarity: 0.351)
+- [Source 2] Onboarding_Guide, Page 1 (similarity: 0.316)
+
+**Note:** The system correctly identifies this as out-of-scope and refuses to hallucinate.
+
+---
+
+## Q12: How do I bake a chocolate cake? (UNANSWERABLE)
+**Answer:**
+I cannot answer this question from the provided documents.
+
+**Sources:** None (no chunks retrieved above similarity threshold)
+
+**Note:** The system correctly handles completely unrelated queries with zero sources.
