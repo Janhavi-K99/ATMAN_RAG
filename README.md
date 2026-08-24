@@ -78,27 +78,35 @@ Every answer returns:
 - Ollama installed and running (`ollama serve`)
 - Model pulled: `ollama pull llama3.2:latest`
 
-### Quick Start (Windows PowerShell)
-```powershell
-# 1. Clone / navigate to project
-cd D:\INTERVIEW\00 APPLICATIONS\AUGUST 2026\OFF CAMPUS\ATMAN\ATMAN_ASSIGNMENT
+### Quick Start (Any OS)
+```bash
+# 1. Clone repository
+git clone https://github.com/Janhavi-K99/ATMAN_RAG.git
+cd ATMAN_RAG
 
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Build vector store (one-time)
+# 3. Build vector store (one-time, ~30 sec)
 python run_phase1.py
 
-# 4. Start API server (terminal 1)
+# 4. Start API + UI (one command)
+python run.py
+```
+
+### Manual Start (2 Terminals)
+```bash
+# Terminal 1 - API
 python -m uvicorn src.api.main:app --host 0.0.0.0 --port 8000
 
-# 5. Start Streamlit UI (terminal 2)
+# Terminal 2 - UI
 python -m streamlit run src/ui/app.py --server.port 8501
 ```
 
-### One-Command Startup (Development)
-```powershell
-python run.py
+### Verify
+- Open browser: http://localhost:8501
+- API health: http://localhost:8000/health
+- API docs: http://localhost:8000/docs
 ```
 
 ### Using the API
